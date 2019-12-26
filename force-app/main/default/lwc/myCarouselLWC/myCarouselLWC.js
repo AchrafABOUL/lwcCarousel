@@ -67,7 +67,6 @@ export default class MyCarouselLWC extends LightningElement {
             const a = (this.currentPos) * 100;
             const b = (this.currentPos - 1) * 100;
             let firstDiv = this.template.querySelector(`[data-id="firstDiv"]`);
-
             firstDiv.animate([{
                     transform: `translateX(${a}%)`
                 },
