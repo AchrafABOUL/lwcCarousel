@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box
+}
+
+.myContainer {
+  max-width: 1000px;
+  height: 100px;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+}
+.mySlider {
+  height: inherit;
+  border-radius : 3px;
+
+}
+.mySlides {
+  width : 24% !important;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
