@@ -10,27 +10,29 @@ export default class MyCarouselLWC extends LightningElement {
     directionToNext = true;
     constructor() {
         super();
-        for (let i = 0; i < 17; i++) {
+        for (let i = 0; i < 9; i++) {
             this.elements.push({
                 'txt': `Div number : ${i+1}`
             });
         }
     }
-    connectedCallback() {        
-       // eslint-disable-next-line @lwc/lwc/no-async-operation
-       setInterval(()=>{
-           if(this.currentPos === 0){
-            this.directionToNext = true;
-           }
-           else if(this.currentPos === (-(Math.floor(this.elements.length / 4)))){
-            this.directionToNext = false;
-           }
-           if(this.directionToNext){
-            this.next();
-           }
-           else{
-            this.previous();
-           }
+    connectedCallback() {
+        // eslint-disable-next-line @lwc/lwc/no-async-operation
+        setInterval(() => {
+            let c = 0;
+            if (Math.floor(this.elements.length / 4) === (this.elements.length / 4)) {
+                c = 1;
+            }
+            if (this.currentPos === 0) {
+                this.directionToNext = true;
+            } else if (this.currentPos === (-(Math.floor(this.elements.length / 4)) + c)) {
+                this.directionToNext = false;
+            }
+            if (this.directionToNext) {
+                this.next();
+            } else {
+                this.previous();
+            }
         }, 4000);
     }
     previous() {
@@ -57,7 +59,11 @@ export default class MyCarouselLWC extends LightningElement {
     }
     next() {
         this.directionToNext = true;
-        if (this.currentPos > (-(Math.floor(this.elements.length / 4)))) {
+        let c = 0;
+        if (Math.floor(this.elements.length / 4) === (this.elements.length / 4)) {
+            c = 1;
+        }
+        if (this.currentPos > (-(Math.floor(this.elements.length / 4)) + c)) {
             const a = (this.currentPos) * 100;
             const b = (this.currentPos - 1) * 100;
             let firstDiv = this.template.querySelector(`[data-id="firstDiv"]`);
