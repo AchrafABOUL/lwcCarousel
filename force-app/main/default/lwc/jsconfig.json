@@ -5,6 +5,9 @@
         "paths": {
             "c/myCarouselLWC": [
                 "myCarouselLWC/myCarouselLWC.js"
+            ],
+            "c/coverCarouselLWC": [
+                "coverCarouselLWC/coverCarouselLWC.js"
             ]
         }
     },

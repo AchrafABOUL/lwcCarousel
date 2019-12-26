@@ -1,0 +1,43 @@
+.myContainer{
+  max-width: 600px;
+  height: 300px;
+  display : flex;
+  align-items: center;
+  justify-content: center;
+}
+.element.centerElement{
+  box-shadow: 0 0 0px rgba(255, 255, 255, 0.6), 0 0 4px rgba(255, 255, 255, 0.45), 0 0 8px rgba(255, 255, 255, 0.25), 0 0 8px rgba(255, 255, 255, 0.1);
+  opacity: 1;
+  transform: scale(1.4);
+  z-index: 1;
+  box-shadow: 3px;
+
+}
+.element.rightElement{
+  transform: scale(1.5);
+  box-shadow: 3px;
+  transform: translateX(80%);
+}
+.element.leftElement{
+  
+  transform: scale(1.5);
+  box-shadow: 3px;
+  transform: translateX(-80%);
+}
+
+.element{
+  background: rgb(108, 201, 255);
+  opacity: .7;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+  width : 150px;
+  height: 150px;
+  z-index: 0;
+  display : flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.element:hover{
+  cursor: pointer;
+}
