@@ -34,6 +34,7 @@ export default class MyCarouselLWC extends LightningElement {
         }, 4000);
     }
     previous() {
+        this.directionToNext = false;
         if (this.currentPos < 0) {
             const a = (this.currentPos) * 100;
             const b = (this.currentPos + 1) * 100;
@@ -55,6 +56,7 @@ export default class MyCarouselLWC extends LightningElement {
 
     }
     next() {
+        this.directionToNext = true;
         if (this.currentPos > (-(Math.floor(this.elements.length / 4)))) {
             const a = (this.currentPos) * 100;
             const b = (this.currentPos - 1) * 100;
